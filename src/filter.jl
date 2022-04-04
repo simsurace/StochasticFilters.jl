@@ -16,6 +16,11 @@ Provided the interface above is fully implemented, the following methods come fo
 """
 abstract type StochasticFilter end
 
+function distribution(::StochasticFilter) end
+Distributions.mean(F::StochasticFilter) = mean(distribution(F))
+Distributions.var(F::StochasticFilter) = var(distribution(F))
+Distributions.cov(F::StochasticFilter) = cov(distribution(F))
+
 abstract type DiscreteTimeFilter <: StochasticFilter end
 abstract type ContinuousTimeFilter <: StochasticFilter end
 
