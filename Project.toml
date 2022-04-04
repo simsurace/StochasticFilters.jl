@@ -3,6 +3,9 @@ uuid = "24ca1ce6-0b19-44d9-a8d1-c7cee7f35f79"
 authors = ["Simone Carlo Surace"]
 version = "0.1.0"
 
+[deps]
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+
 [compat]
 julia = "1.6"
 

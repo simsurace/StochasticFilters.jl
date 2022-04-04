@@ -1,5 +1,9 @@
 module StochasticFiltering
 
-# Write your package code here.
+using Distributions
 
-end
+include("filter.jl")
+export StochasticFilter, DiscreteTimeFilter, ContinuousTimeFilter
+export stochasticfilter
+
+end # module
