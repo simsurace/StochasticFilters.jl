@@ -10,7 +10,7 @@
             F.s .+= U .* Y
         end
 
-        @testset "stochasticfilter"
+        @testset "stochasticfilter" begin
             Y1 = [rand(2) for i in 1:5]
             Y2 = hcat(Y1...)
             U1 = [rand(2) for i in 1:5]
@@ -40,7 +40,7 @@
             F.s .+= U .* (dY .- F.s .* dt)
         end
 
-        @testset "stochasticfilter"
+        @testset "stochasticfilter" begin
             Y1 = [rand(2) for i in 1:5]
             Y2 = hcat(Y1...)
             U1 = [rand(2) for i in 1:5]
