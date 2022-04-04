@@ -1,4 +1,4 @@
-module StochasticFiltering
+module StochasticFilters
 
 using Distributions
 

@@ -115,7 +115,7 @@ uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
 [[Sockets]]
 uuid = "6462fe0b-24de-5631-8697-dd941f90decc"
 
-[[StochasticFiltering]]
+[[StochasticFilters]]
 path = ".."
 uuid = "24ca1ce6-0b19-44d9-a8d1-c7cee7f35f79"
 version = "0.1.0"

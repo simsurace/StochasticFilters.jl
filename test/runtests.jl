@@ -1,6 +1,6 @@
-using StochasticFiltering
+using StochasticFilters
 using Test
 
-@testset "StochasticFiltering.jl" begin
+@testset "StochasticFilters.jl" begin
     include("filter.jl")
 end

@@ -1,14 +1,14 @@
 ```@meta
-CurrentModule = StochasticFiltering
+CurrentModule = StochasticFilters
 ```
 
-# StochasticFiltering
+# StochasticFilters
 
-Documentation for [StochasticFiltering](https://github.com/simsurace/StochasticFiltering.jl).
+Documentation for [StochasticFilters](https://github.com/simsurace/StochasticFilters.jl).
 
 ```@index
 ```
 
 ```@autodocs
-Modules = [StochasticFiltering]
+Modules = [StochasticFilters]
 ```
