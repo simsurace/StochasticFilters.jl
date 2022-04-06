@@ -4,6 +4,6 @@ using Distributions
 
 include("filter.jl")
 export StochasticFilter, DiscreteTimeFilter, ContinuousTimeFilter
-export stochasticfilter
+export sfilter
 
 end # module
