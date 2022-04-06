@@ -2,7 +2,7 @@ module StochasticFilters
 
 using Distributions
 
-include("filter.jl")
+include("sfilter.jl")
 export StochasticFilter, DiscreteTimeFilter, ContinuousTimeFilter
 export sfilter
 

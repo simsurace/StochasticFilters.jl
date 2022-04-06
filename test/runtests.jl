@@ -2,5 +2,5 @@ using StochasticFilters
 using Test
 
 @testset "StochasticFilters.jl" begin
-    include("filter.jl")
+    include("sfilter.jl")
 end
