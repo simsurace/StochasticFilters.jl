@@ -31,6 +31,8 @@ For this, the package provides the function `sfilter`:
 ```julia
 sfilter(Y_traj, F)
 ```
+which returns the filter after running through the complete trajectory.
+In order to get the vector of all intermediate filter states (including the initial one), use `Sfilter(Y_traj, F)`.
 
 The package also has implementations of a few well-known discrete- and continuous-time filters:
 - Discrete-time Kalman filter
@@ -68,19 +70,28 @@ In order to record a trajectory of the complete filter state, the filter can be 
 F_rec = Recording(F)
 sfilter(dY, F_ad)
 ```
-The recorded data can then be retrieved via `recorded_data(F_rec)`. 
+The recorded data can then be retrieved via `recorded_data(F_rec)`.
 It is an array of length `length(dY) + 1` (assuming that `sfilter` has been called only once), where the first entry is the initial state of the filter (before seeing any observations), and the remaining elements are the states after seeing each of the observations (i.e. the state is recorded after advancing the filter state).
+
+In fact, the operation
+```julia
+sfilter(Y, Recording(F)) |> recorded_data
+```
+is equivalent to `Sfilter(Y, F)`.
 
 Recording the full filter state is sometimes not desired or takes up too much memory.
 In this case, one can pass a recording function, e.g. to record only the mean of the posterior distribution:
 ```julia
-rec(F) = mean(F)
-F_rec = Recording(F, rec)
+F_rec = Recording(F, mean)
 ```
 Or if the function depends on the observation as well,
 ```julia
 rec(F, Y) = likelihood(Y, F)
 F_rec = Recording(F, rec)
+```
+In order to directly obtain the trajectory of the recorded quantity, call
+```julia
+Sfilter(Y, Recording(F, rec))
 ```
 In order to show the versatiliy of this approach, suppose that we know the ground truth of the latent trajectory `X_traj` and want to compute the mean-squared error of the filter.
 We can define
