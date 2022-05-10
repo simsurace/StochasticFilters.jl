@@ -12,7 +12,7 @@
 
         @testset "sfilter" begin
             Y1 = [rand(2) for i in 1:5]
-            Y2 = hcat(Y1...)
+            Y2 = hcat(Y1...) 
             U1 = [rand(2) for i in 1:5]
             U2 = hcat(U1...)
 
