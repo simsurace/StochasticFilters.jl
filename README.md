@@ -9,7 +9,7 @@ The StochasticFiltering.jl package provides high-level abstractions for simulati
 
 Within Julia 1.6.0+, press `]` to use the built-in package manager, then type
 
-```julia
+```
 pkg> add https://github.com/simsurace/StochasticFiltering.jl
 ```
 
