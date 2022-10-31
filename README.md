@@ -10,7 +10,7 @@ It provides implementations of some well-known stochastic filters, but is mainly
 
 Within Julia 1.6.0+, press `]` to use the built-in package manager, then type
 
-```julia
+```
 pkg> add StochasticFilters
 ```
 
