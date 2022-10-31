@@ -2,17 +2,24 @@
     StochasticFilter
 
 This is the abstract supertype that defines the interface for stochastic filters.
-If `F` is a `StochasticFilter`, it is expected to be a stateful callable object that takes an observation, potentially modifies its internal state, and returns itself.
+If `F` is a `StochasticFilter`, it is expected to be a stateful callable object that takes
+an observation, potentially modifies its internal state, and returns itself.
 
-There are two abstract subtypes `DiscreteTimeFilter` and `ContinuousTimeFilter` that differ by signature:
-- A `DiscreteTimeFilter` must take an observation and optionally a control input, i.e. `F(Y)` or `F(Y, U)`.
-- A `ContinuousTimeFilter` must take an observation and a time step, and optionally a control input, i.e. `F(dY, dt)` or `F(dY, dt, U)`.
+There are two abstract subtypes `DiscreteTimeFilter` and `ContinuousTimeFilter` that differ
+by signature:
+- A `DiscreteTimeFilter` must take an observation and optionally a control input, i.e.
+  `F(Y)` or `F(Y, U)`.
+- A `ContinuousTimeFilter` must take an observation and a time step, and optionally a
+  control input, i.e. `F(dY, dt)` or `F(dY, dt, U)`.
 
-Since F is a 'stochastic' filter, it represents a distribution. Thus it is expected that `distribution(F)` returns a `Distribution` object.
+Since F is a 'stochastic' filter, it represents a distribution. Thus it is expected that
+`distribution(F)` returns a `Distribution` object.
 
 # Methods
 Provided the interface above is fully implemented, the following methods come for free:
-- `stochasticfilter` filters an entire trajectory of observations
+- `sfilter` filters an entire trajectory of observations and returns the final filter state.
+- `Sfilter` filters an entire trajectory of observations and retunrs the  complete
+  trajectory of filter states.
 """
 abstract type StochasticFilter end
 
